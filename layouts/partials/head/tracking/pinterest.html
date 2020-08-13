@@ -1,0 +1,32 @@
+<script>
+    !function (e) {
+        if (!window.pintrk) {
+            window.pintrk = function () {
+                window.pintrk.queue.push(Array.prototype.slice.call(arguments))
+            }; var
+                n = window.pintrk; n.queue = [], n.version = "3.0"; var
+                    t = document.createElement("script"); t.async = !0, t.src = e; var
+                        r = document.getElementsByTagName("script")[0];
+            r.parentNode.insertBefore(t, r)
+        }
+    }("https://s.pinimg.com/ct/core.js");
+    pintrk('load', '{{ .Site.Params.Tracking.Pinterest.Product }}');
+    pintrk('page');
+    pintrk('load', '{{ .Site.Params.Tracking.Pinterest.Global }}');
+    pintrk('page');
+
+    {{/* Pinterst being the awesome platform it is, it only supports on tag at a time. 
+    Therefore we need to reregister the tag to support multiple tags per page. */}}
+    window.pintrkMulti = function (track, eventCode, additionalData) {
+        pintrk('load', '{{ .Site.Params.Tracking.Pinterest.Product }}');
+        pintrk(track, eventCode, additionalData);
+        pintrk('load', '{{ .Site.Params.Tracking.Pinterest.Global }}');
+        pintrk(track, eventCode, additionalData);  
+    }
+</script>
+<noscript>
+<img height="1" width="1" style="display:none;" alt=""
+  src="https://ct.pinterest.com/v3/?tid={{ .Site.Params.Tracking.Pinterest.Product }}&noscript=1" />
+<img height="1" width="1" style="display:none;" alt=""
+  src="https://ct.pinterest.com/v3/?tid={{ .Site.Params.Tracking.Pinterest.Global }}&noscript=1" />
+</noscript>

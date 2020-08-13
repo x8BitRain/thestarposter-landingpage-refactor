@@ -1,0 +1,10 @@
+<script>
+if (window.location.host.includes("localhost")) {
+    window.location.replace("https://nachthimmel.de");
+}
+else {
+    var host = window.location.host
+    var redirect = host.split('.').slice(1).join('.')
+    window.location.replace("https://"+redirect);
+}
+</script>

@@ -1,0 +1,8 @@
+<div class="topnote">
+    <p class="topnote-message">{{ .Site.Params.newsMessage.text | markdownify }}<span class="topnote-clue"></span></p>
+    <span class="topnote-disclaimer">{{ .Site.Params.newsMessage.disclaimer | markdownify }}</span>
+    <div class="dunno">
+        <p class="">{{ .Site.Params.newsMessage.additionalInfo | markdownify }}</p>
+        <script src="/js/offers.js"></script>
+    </div>
+</div>

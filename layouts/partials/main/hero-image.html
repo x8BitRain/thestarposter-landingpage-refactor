@@ -1,0 +1,24 @@
+<!-- Main Hero Image -->
+{{ $photo_hero := resources.Get "images/main/photo_hero.jpg" }}
+{{ $photo_hero_crop := resources.Get "images/main/photo_hero_crop.jpg" }}
+{{ $filename := print "madein." .Lang }}
+{{ $thing := .Resources.Match $filename }}
+
+<p>{{$filename}}</p>
+<p>{{$thing.RelPermalink}}</p>
+
+<picture>
+    <source media="(min-width: 768px)" srcset="
+      /webpack/src/images/global/photo_hero_360x.jpg 360w,
+      /webpack/src/images/global/photo_hero_512x.jpg 512w,
+      /webpack/src/images/global/photo_hero_768x.jpg 768w,
+      /webpack/src/images/global/photo_hero_1024x.jpg 1024w,
+      /webpack/src/images/global/photo_hero_2000x.jpg 2000w">
+    <source media="(max-width: 768px)" srcset="
+      /webpack/src/images/global/photo_hero_crop_360x.jpg 360w,
+      /webpack/src/images/global/photo_hero_crop_512x.jpg 512w,
+      /webpack/src/images/global/photo_hero_crop_768x.jpg 768w,
+      /webpack/src/images/global/photo_hero_crop_768x.jpg 1024w,
+      /webpack/src/images/global/photo_hero_crop_2048x.jpg 2048w">
+    <img class="hero" src="/webpack/src/images/global/photo_hero_crop_360x.jpg">
+</picture>

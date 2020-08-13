@@ -1,0 +1,214 @@
+<html lang="{{ .Lang }}">
+
+<head>
+  <meta name="Description" content="{{ i18n "meta" }}">
+  {{ partial "head/mainPageLangRedr.html" . }}
+  {{ partial "head.html" . }}
+</head>
+
+<body class="preload">
+  {{ if ne .Lang "de" }}
+  <div id="menu">
+    <div class="topnote-container">
+      {{ partial "topnote/discount.html" . }}
+      {{ partial "trustbox/trustbox-micro.html" . }}
+    </div>
+    {{ partial "header/mainMenu.html" . }}
+    {{ partial "header/sideMenu.html" . }}
+  </div>
+
+  {{ partial "popups/language-picker.html" . }}
+
+  <div class="content">
+
+    {{ partial "main/hero-image.html" . }}
+<!--    &lt;!&ndash; Hero banner &ndash;&gt;-->
+<!--    <img class="madein" src="/images/{{ .Lang }}/stamp_madein.de.svg">-->
+<!--    <picture>-->
+<!--      <source media="(min-width: 768px)" srcset="-->
+<!--      /webpack/src/images/global/photo_hero_360x.jpg 360w,-->
+<!--      /webpack/src/images/global/photo_hero_512x.jpg 512w,-->
+<!--      /webpack/src/images/global/photo_hero_768x.jpg 768w,-->
+<!--      /webpack/src/images/global/photo_hero_1024x.jpg 1024w,-->
+<!--      /webpack/src/images/global/photo_hero_2000x.jpg 2000w">-->
+<!--      <source media="(max-width: 768px)" srcset="-->
+<!--      /webpack/src/images/global/photo_hero_crop_360x.jpg 360w,-->
+<!--      /webpack/src/images/global/photo_hero_crop_512x.jpg 512w,-->
+<!--      /webpack/src/images/global/photo_hero_crop_768x.jpg 768w,-->
+<!--      /webpack/src/images/global/photo_hero_crop_768x.jpg 1024w,-->
+<!--      /webpack/src/images/global/photo_hero_crop_2048x.jpg 2048w">-->
+<!--      <img class="hero" src="/webpack/src/images/global/photo_hero_crop_360x.jpg">-->
+<!--    </picture>-->
+
+
+
+    <section>
+      <div class="hero padding">
+        <h1 id="title">
+          {{ i18n "headlinePrimary" }}
+        </h1>
+        <p>{{ i18n "headlineSecondary"}}</p>
+        {{ partial "modules/btn-create" . }}
+      </div>
+    </section>
+
+    <!-- Trustbox reviews -->
+    <section id="trustbox">
+      
+
+        <div class="gridtrust">
+          {{ partial "trustbox/trustbox-small.html" . }}
+          <div id="stamp" style="margin: 0 auto;">
+            <img class="lazyload" data-src="/images/{{ .Lang }}/stamp_madein.svg" alt="Made in Germany">
+          </div>
+        </div>
+      
+    </section>
+
+
+    <!-- Occasions -->
+    <section id="occasions">
+      <div class="padding">
+        <h2 class="no-separator">{{ i18n "alwaysPerfectPresent"}}</h2>
+        {{ partial "modules/gallery-occasions" . }}
+        {{ partial "modules/gallery-quotes" . }}
+    </section>
+
+    <!-- Product context -->
+    <section id="productcontext">
+      <div class="padding bglight">
+        <h2>
+          {{ i18n "primaryBoxHeader"}}
+        </h2>
+        {{ i18n "primaryBoxText" | markdownify }}
+        {{ partial "modules/btn-create" . }}
+      </div>
+    </section>
+
+    <!-- Instagram feed -->
+    <section>
+      <div class="padding">
+        <h2 class="no-separator small-margin">{{ i18n "instagramHeading" }}</h2>
+        <p class="subhead">{{ i18n "instagramSubheading" }}</p>
+        {{ partial "modules/gallery-instagram" . }}
+    </section>
+
+     <!-- Astronomically correct -->
+     <section>
+      <div class="padding astro-container">
+        <div class="astro-left">
+          <img class="astro-stamp" loading="lazy" data-src="/images/global/stamp_astro.svg" />
+        </div>
+        <div class="padding astro-right">
+          <div class="astro-howitsdone">
+            <h2 class="no-separator">{{ i18n "howWeDoItHeadline" | markdownify}}</h2>
+            <div>
+              {{ i18n "howWeDoItText" | markdownify }}
+            </div>
+          </div>
+          <div class="astro">
+            <div class="astro-text">
+              <h4>{{ i18n "astronomicallyValid" }}</h4>
+              <br class="mbreak" />
+              {{ i18n "astronomicallyValidText" | markdownify }}
+              {{ partial "modules/btn-create" . }}
+            </div>
+            <img class="astro-stamp" loading="lazy" src="/images/global/stamp_astro.svg" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured in -->
+    <section>
+      <div class="padding">
+        <h2 class="no-separator small-margin">{{ i18n "featuredIn" }}</h2>
+        {{ partial "modules/gallery-featuredin" . }}
+      </div>
+    </section>
+
+    <!-- Product variants -->
+    {{ partial "main/product-variants" . }}
+
+    <!-- 3 Steps guide -->
+    <section>
+      <div class="padding bglight">
+        <h2 class="no-separator">
+          {{ i18n "howToCreateYourMap"}}
+        </h2>
+        <div class="tutorial">
+          <div class="tutorial-element">
+            <p class="tutorial-step">1</p>
+            <img class="tutorial-photo lazyload" 
+              loading="lazy"
+              data-src="/webpack/src/images/global/photo_tutorial_1_1200x.jpg"
+              srcset="/webpack/src/images/global/photo_tutorial_1_360x.jpg,
+              /webpack/src/images/global/photo_tutorial_1_768x.jpg 1x,
+              /webpack/src/images/global/photo_tutorial_1_1200x.jpg 2x">
+            <p class="label">{{ i18n "choosePlaceAndDate"}}</p>
+          </div>
+          <div class="tutorial-element">
+            <p class="tutorial-step">2</p>
+            <img class="tutorial-photo lazyload"
+              loading="lazy" 
+              data-src="/webpack/src/images/global/photo_tutorial_2_1200x.jpg"
+              srcset="/webpack/src/images/global/photo_tutorial_2_360x.jpg,
+              /webpack/src/images/global/photo_tutorial_2_768x.jpg 1x,
+              /webpack/src/images/global/photo_tutorial_2_1200x.jpg 2x">
+            <p class="label">{{ i18n "addYourDedication"}}</p>
+          </div>
+          <div class="tutorial-element">
+            <p class="tutorial-step">3</p>
+            <img class="tutorial-photo lazyload" 
+              loading="lazy"
+              data-src="/webpack/src/images/global/photo_tutorial_3_1200x.jpg"
+              srcset="/webpack/src/images/global/photo_tutorial_3_360x.jpg,
+              /webpack/src/images/global/photo_tutorial_3_768x.jpg 1x,
+              /webpack/src/images/global/photo_tutorial_3_1200x.jpg 2x">
+            <p class="label">{{ i18n "chooseYourLayout"}}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="bglight">
+      <div class="padding bglight">
+        <h1 id="title">
+          {{ i18n "endHeadline" }}
+        </h1>
+        <p>{{ i18n "endText" | markdownify}}</p>
+        {{ partial "modules/btn-create" . }}
+      </div>
+      <br>
+      <br>
+    </section>
+    <!-- Removed temporarily -->
+    <!-- Examples -->
+    <!-- <section>
+      {{ partial "modules/gallery-examples.html" . }}
+    </section> -->
+    <!-- Removed temporarily -->
+
+  </div>
+  {{ partial "footer/footer.html" . }}
+  {{ partial "modules/popup-create.html" . }}
+  {{ else }}
+  {{ partial "header/redirectToNachthimmel.html" . }}
+  {{ end }}
+  <script>
+    function readCookie(name) {
+      var v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+      return v ? v[2] : null;
+    }
+    getCurrencies();
+    var preferredCurrency = readCookie('preferredCurrency');
+    if (preferredCurrency) {
+      getPrices(preferredCurrency);
+    } else {
+      getPrices();
+    }
+  </script>
+</body>
+
+</html>

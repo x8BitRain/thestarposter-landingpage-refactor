@@ -1,0 +1,36 @@
+<footer>
+    <div class="footer-content">
+        <div class="disclaimer"></div>
+        <div class="footer-links">
+            {{ range .Site.Menus.footer }}
+            <a class="footer-link" href="{{ .URL }}">
+                {{ .Pre }}
+                {{ .Name }}
+                {{ .Post }}
+            </a>
+            {{ end }}
+        </div>
+    </div>
+    <div class="footer-heureka">
+        <div class="footer-social">
+            <a href="https://www.facebook.com/thestarposter/" target="_blank" class="social-link"><div class="social-icon facebook"></div></a>
+            <a href="https://www.pinterest.de/thestarposter/" target="_blank" class="social-link"><div class="social-icon pinterest"></div></a>
+            <a href="https://www.instagram.com/thestarposter/" target="_blank" class="social-link"><div class="social-icon instagram"></div></a>
+        </div>
+        <p class="proudlymade">{{ i18n "byHeureka" | markdownify }}</p>
+        <div class="footer-copyright">
+            <p>© 2020, <a href="https://heurekaprints.com" title="">Heureka Prints</a></p>
+        </div>
+    </div>
+    <div class="footer-payments">
+        <img class="lazyload" data-src="/images/global/icons/ic_array_payments.svg">
+    </div>
+    <script>
+        if (new Date().getUTCFullYear() < 2019) {
+            document.querySelector('#kleinunternehmer').style.visibility = 'visible'
+        }
+    </script>
+
+    {{/* if ne .Lang "de" }}{{ partial "footer/cookieConsent.html" . }} {{ end */}}
+
+</footer>

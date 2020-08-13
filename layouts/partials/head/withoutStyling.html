@@ -1,0 +1,18 @@
+<!-- Everything that goes into <head> -->
+<meta name="p:domain_verify" content="ff9e0b10e6b92a63334a3d8847012bcd" />
+{{ if eq .Lang "de" }}
+<link rel="canonical" href="{{ .Permalink }}" />
+{{ end }}
+<!-- Favicon -->
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/global/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/global/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/global/favicons/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<!-- Meta -->
+<title>{{ .Site.Params.Title }} - {{ .Title }}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta charset="utf-8" />
+<link rel="prefetch" href="/editor">
+<link rel="prerender" href="/editor">
+{{ partial "head/tracking/all" . }}

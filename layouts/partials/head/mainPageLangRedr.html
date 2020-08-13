@@ -1,0 +1,35 @@
+{{/* Currently we only redirect from thestarposter.com/, e.g. a user of thestarposter.fr will never be redirected to thestarposter.es */}}
+{{ if eq .Language.Lang "en" }}
+<script>
+    function getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+    var redrs = {
+        {{ range .AllTranslations }}
+            {{ if ne .Language.Lang "de" }}
+                {{ .Language.Lang }}: {{ .Permalink }} + "lang_redr",
+            {{ end }}
+        {{ end }}
+        de: "https://nachthimmel.de"
+    }
+    var lang = getCookie('nf_lang') || navigator.language || navigator.browserLanguage;
+    lang = lang.split('-')[0]
+
+    if (lang !== "{{ .Lang }}") {
+        var destination = redrs[lang] || redrs['en']
+        window.location.replace(destination)
+    }
+</script>
+{{ end }}

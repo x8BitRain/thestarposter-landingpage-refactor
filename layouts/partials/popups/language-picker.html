@@ -1,0 +1,23 @@
+<div id="language-picker">
+    <div class="popup-card">
+        <div class="card-head">
+            <h3>{{ i18n "languagePickerTitle" }}</h3>
+            <div class="btn-close"></div>
+        </div>
+        <div class="language-list">
+            {{ range .AllTranslations }}
+            {{ $translation := .Permalink }}
+            {{ if eq .Language.Lang "de" }}
+                <a onclick="onLangPrefSelected(event)" style="cursor: pointer" href="https://nachthimmel.de/">
+                    <img id="{{ .Language }}" class="lazyload" data-src="/images/global/icons/ic_flag_{{ .Language }}.svg"/>
+                </a>  
+            {{ else }}
+                <a onclick="onLangPrefSelected(event)" style="cursor: pointer" href="{{ $translation }}lang_redr">
+                    <img id="{{ .Language }}" class="lazyload" data-src="/images/global/icons/ic_flag_{{ .Language }}.svg"/>
+                </a>     
+            {{ end }}
+        {{ end }}
+        </div>
+    </div>
+    <div class="backdrop" onclick="toggleLanguagePicker()"></div>
+</div>

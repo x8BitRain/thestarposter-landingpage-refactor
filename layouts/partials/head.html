@@ -1,0 +1,39 @@
+<!-- CSS is inlined for now -->
+<style>
+{{ $cssFont := resources.Get "/css/font.css" }}
+{{ $cssGeneral := resources.Get "/css/general.css" }}
+{{ $cssHeader := resources.Get "/css/header.css" }}
+{{ $cssFooter := resources.Get "/css/footer.css" }}
+{{ $cssContent := resources.Get "/css/content.css" }}
+{{ $cssContainer := resources.Get "/css/page_containers.css" }}
+{{ $cssCart := resources.Get "/css/cart.css" }}
+{{ $style := slice $cssFont $cssGeneral $cssHeader $cssFooter $cssContent $cssContainer $cssCart | resources.Concat "/css/critical.css" |resources.Minify  }}
+{{ $style.Content | safeCSS}}
+</style>
+<!-- Scripts -->
+<script>
+  // {{ $cssPreloadPolyfill := resources.Get "/js/cssPreLoadPolyfill.js" | resources.Minify }}
+  // {{ $cssPreloadPolyfill.Content | safeJS }} >
+  {{ $interactions := resources.Get "/js/interactions.js" | resources.Minify }}
+  {{ $interactions.Content | safeJS }}
+  {{ $endpoint := resources.Get "/js/endpoint.js" | resources.Minify }}
+  {{ $endpoint.Content | safeJS }}
+  {{ $currencies := resources.Get "/js/getCurrencies.js" | resources.Minify }}
+  {{ $currencies.Content | safeJS }}
+  {{ $prices := resources.Get "/js/getPrices.js" | resources.Minify }}
+  {{ $prices.Content | safeJS }}
+  function onLangPrefSelected(e) {
+    var language = e.target.id
+    setLanguagePref(language)
+
+    if ('{{ getenv "CONTEXT" }}' === 'deploy-preview' || '{{ getenv "CONTEXT"}}' === 'branch-deploy') {
+        window.location.reload()
+        e.preventDefault()
+    }
+  }
+</script>
+
+<!-- TrustBox script -->
+<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+<script async src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js"></script>
+{{ partial "head/withoutStyling" . }}

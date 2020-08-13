@@ -1,0 +1,18 @@
+<!-- Side Menu -->
+<div id="sideMenu">
+  {{ range .Site.Menus.main }}
+
+  <a href="{{ .URL }}">
+    <span class="sideMenu-item">{{ .Name }}</span>
+    {{ .Post }}
+  </a>
+
+  {{ end }}
+  </a>
+</div>
+<style>
+{{/* The mobile menu is invisible due to a set negative margin top. The margin needs to be set based on the number of menu items. That happens here. */}}
+#sideMenu {
+  margin-top: -{{ mul (len .Site.Menus.main) 55 }}px;
+}
+</style>

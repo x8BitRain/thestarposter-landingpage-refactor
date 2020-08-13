@@ -1,0 +1,57 @@
+<nav id="mainMenu">
+    <div class="logo-container">
+        <a href="{{ .Site.Params.RootUrl }}">
+            <img id="default-logo" class="logo" src="{{ .Site.Params.Logo }}">
+            <img id="compact-logo" class="logo" src="{{ .Site.Params.Compact }}">
+        </a>
+    </div>
+    <div class="links">
+        {{ range .Site.Menus.main }}
+
+        <a class="{{ .Pre }}" href="{{ .URL }}">
+            <span>{{ .Name }}</span>
+            {{ .Post }}
+        </a>
+
+        {{ end }}
+    </div>
+    <div class="actions">
+        <select class="menu-btn currency" style="display:none">
+        </select>
+        {{ if .Params.showLanguagePicker }}
+        <img class="menu-btn language" src="/images/global/icons/ic_flag_{{ .Lang }}.svg"
+            onclick="toggleLanguagePicker()">
+
+        {{ end }}
+        <a id="cart-link" href="/cart">
+            <img class="menu-btn cart" src="/images/global/icons/ic_cart.svg">
+            <div class="cartCount">
+                <span id="cart-count"></span>
+            </div>
+        </a>
+
+
+        <div class="menu-btn hamburger ic-hamburger" onclick="toggleMenu(this)">
+          <div class="bar first"></div>
+          <div class="bar mid"></div>
+          <div class="bar last"></div>
+        </div>
+    </div>
+</nav>
+
+<script>
+window.getCookie = function(name) {
+    var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    if (match) return match[2];
+};
+
+const cartItems = window.getCookie('numberOfItemsInCart');
+const cartItemsBadge = document.querySelector('#cart-count');
+const cartItemsDiv = document.querySelector('.cartCount');
+
+if (cartItems > 0) {
+    cartItemsBadge.innerText = cartItems;
+} else {
+    cartItemsDiv.style.display = "none";
+}
+</script>

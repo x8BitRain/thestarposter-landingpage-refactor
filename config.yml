@@ -1,0 +1,194 @@
+---
+theme:
+- bare
+- cart
+- editor
+defaultContentLanguage: en
+defaultContentLanguageInSubdir: true
+languages:
+  en:
+    title: The Star Poster
+    baseURL: https://thestarposter.com/
+    weight: "1"
+    newsMessage:
+      showDiscountCode: true
+      text: We are still shipping - quick and contactless
+      disclaimer: ''
+      additionalInfo: ''
+    trustbox:
+      locale: en-UK
+      url: https://uk.trustpilot.com/review/www.heurekaprints.com
+  it:
+    title: The Star Poster
+    baseURL: https://thestarposter.it/
+    weight: "4"
+    newsMessage:
+      showDiscountCode: true
+      text: Proseguono le operazioni di consegna - velocemente ed evitando i contatti
+      disclaimer: ''
+      additionalInfo: ''
+    menu:
+      main:
+      - name: Crea
+        pre: editorButton
+        class: editorButton
+        url: "/editor"
+        weight: "2"
+      - identifier: home
+        name: Home
+        url: "/"
+        weight: "1"
+      footer:
+      - name: Work With Us
+        url: https://heurekaprints.com/jobs/
+        weight: "10"
+    trustbox:
+      locale: it-IT
+      url: https://it.trustpilot.com/review/www.heurekaprints.com
+  es:
+    title: The Star Poster
+    baseURL: https://thestarposter.es/
+    weight: "4"
+    newsMessage:
+      showDiscountCode: true
+      text: "Seguimos realizando envíos: rápido y sin contacto"
+      disclaimer: ''
+      additionalInfo: ''
+    menu:
+      main:
+      - name: Crea tu Star Poster
+        pre: editorButton
+        class: editorButton
+        url: "/editor"
+        weight: "2"
+      - identifier: home
+        name: Inicio
+        url: "/"
+        weight: "1"
+      footer:
+      - name: Work With Us
+        url: https://heurekaprints.com/jobs/
+        weight: "10"
+    trustbox:
+      locale: es-ES
+      url: https://es.trustpilot.com/review/www.heurekaprints.com
+  fr:
+    title: The Star Poster
+    baseURL: https://thestarposter.fr/
+    weight: "2"
+    menu:
+      main:
+      - name: Créez votre Star Poster
+        pre: editorButton
+        class: editorButton
+        url: "/editor"
+        weight: "2"
+      - identifier: home
+        name: Accueil
+        url: "/"
+        weight: "1"
+      footer:
+      - name: Work With Us
+        url: https://heurekaprints.com/jobs/
+        weight: "10"
+    newsMessage:
+      showDiscountCode: true
+      text: Nous livrons toujours - Rapidement et sans contact
+      disclaimer: ""
+      additionalInfo: ''
+    trustbox:
+      locale: fr-FR
+      url: https://fr.trustpilot.com/review/www.heurekaprints.com
+  de:
+    title: Nachthimmel.de
+    baseURL: https://nachthimmel.de/
+    weight: "3"
+    params:
+      logo: "/images_old/global/logos/logo_nachthimmel_h.svg"
+      rootUrl: https://nachthimmel.de/
+    menu:
+      main:
+      - identifier: home
+        name: Home
+        url: "/"
+        weight: "1"
+      - name: Editor
+        url: https://editor.nachthimmel.de
+        weight: "3"
+      - name: Bewertungen
+        url: https://nachthimmel.de/pages/bewertungen
+        weight: "4"
+      - name: Inspirationen
+        url: https://nachthimmel.de/pages/inspiration
+        weight: "5"
+      footer:
+      - name: Impressum
+        url: https://nachthimmel.de/pages/impressum
+        weight: "2"
+      - name: Datenschutzerklärung
+        url: https://nachthimmel.de/pages/it-recht-datenschutz
+        weight: "2"
+      - name: AGB
+        url: https://nachthimmel.de/pages/it-recht-agb
+        weight: "2"
+      - name: Widerrufsbelehrung & Widerrufsformular
+        url: https://nachthimmel.de/pages/it-recht-widerruf
+        weight: "2"
+      - name: Versand- und Zahlungsinformationen
+        url: https://nachthimmel.de/pages/versand-und-zahlungsinformationen
+        weight: "2"
+      - name: Karriere
+        url: https://heurekaprints.com/jobs/
+        weight: "2"
+    newsMessage:
+      showDiscountCode: false
+      text: Wir liefern weiterhin und sind für euch da!
+      disclaimer: ''
+      additionalInfo: ''
+    trustbox:
+      locale: de-DE
+      url: https://de.trustpilot.com/review/www.heurekaprints.com
+menu:
+  main:
+  - identifier: home
+    name: Home
+    url: "/"
+    weight: "1"
+  - name: Editor
+    pre: editorButton
+    class: editorButton
+    url: "/editor"
+    weight: "2"
+  # - name: Ratings
+  #   url: "/ratings"
+  #   weight: "3"
+  # - name: Inspiration
+  #   url: "/inspiration"
+  #   weight: "4"
+  # - name: Blog
+  #   url: "/blog"
+  #   weight: "5"
+  footer:
+  - name: Work With Us
+    url: https://heurekaprints.com/jobs/
+    weight: "10"
+params:
+  logo: "/images_old/global/logos/logo_thestarposter_h.svg"
+  compact: "/images_old/global/logos/logo_thestarposter_compact.svg"
+  rootUrl: "/"
+  tracking:
+    google:
+      - UA-115748697-1
+      - AW-788439493
+      - AW-763335646
+      - AW-702894312
+    pinterest:
+      product: "2613132394715"
+      global: "2612405345688"
+    facebook:
+      product: "689872491750117"
+      global: "669093259943610"
+markup:
+  goldmark:
+    renderer:
+      unsafe: true

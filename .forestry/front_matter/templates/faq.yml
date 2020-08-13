@@ -1,0 +1,29 @@
+---
+label: Basic Template
+hide_body: false
+fields:
+- name: title
+  label: Title
+  type: text
+  hidden: false
+  default: ''
+- name: date
+  label: Date
+  type: datetime
+  hidden: false
+  default: ''
+- name: type
+  label: Type
+  type: text
+  hidden: false
+  default: ''
+- name: layout
+  label: Layout
+  type: text
+  hidden: false
+  default: ''
+pages:
+- content/data-protection-declaration.md
+- content/general-terms-and-conditions.md
+- content/instruction-for-cancellation-cancellation-form.md
+- content/test.md

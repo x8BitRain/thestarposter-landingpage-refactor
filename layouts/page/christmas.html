@@ -1,0 +1,44 @@
+<html lang="{{ .Lang }}">
+
+<head>
+    {{ partial "head.html" . }}
+</head>
+
+<body>
+    {{ partial "topnote/discount.html" . }}
+    {{ partial "header/sideMenu.html" . }}
+    <div class="pusher">
+        {{ partial "header/mainMenu.html" . }}
+        <div class="ui container singlePage_container">
+            {{ .Content }}
+            <div id="options"></div>
+
+            <script>
+                var lang = document.querySelector('html').getAttribute('lang')
+                function calculate() {
+                    var print = document.querySelector('#printSelect').value
+                    var country = document.querySelector('#countrySelect').value
+                    console.log("https://backend.heurekaprints.de/services/latestDelivery/" + print + "/" + country + "?lang=" + lang)
+                    fetch("https://backend.heurekaprints.de/services/latestDelivery/" + print + "/" + country + "?lang=" + lang).then(function (ans) {
+                        if (ans.status != 200) {
+                            return cb(ans.status)
+                        }
+                        return ans.json()
+                    }).then(function (ans) {
+                        var html = ""
+                        for (var i = 0; i < ans.length; i++) {
+                            html += "<p>" + ans[i].latestDeliveryDateFormatted + "</p>"
+                        }
+                        document.querySelector('#options').innerHTML = html
+                    })
+                }
+                document.querySelector('#printSelect').addEventListener('change', calculate)
+                document.querySelector('#countrySelect').addEventListener('change', calculate)
+                calculate()
+            </script>
+        </div>
+        {{ partial "footer/footer.html" . }}
+    </div>>
+</body>
+
+</html>

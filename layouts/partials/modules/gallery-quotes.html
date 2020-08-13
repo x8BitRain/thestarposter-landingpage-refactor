@@ -1,0 +1,76 @@
+<div class="gallery feature" style="white-space: normal;margin-top:50px" onscroll="setGalleryIndicator(this)">
+    <div class="gallery-element feature">
+        
+        <div class="gallery-photo feature">
+            <blockquote class="quote">
+                <span class="quote-icon"><img src="/webpack/src/images/global/quote_41x.png" alt="quote"></span>
+                
+                <div class="quote-text">
+                    <p>{{ i18n "customer1Says" }}</p>
+                </div>
+            
+                <cite> - {{ i18n "customer1Name" }}</cite>
+                
+            </blockquote>
+        </div>
+
+    </div>
+    <div class="gallery-element feature">
+        
+        <div class="gallery-photo feature">
+        <blockquote class="quote">
+            <span class="quote-icon"><img src="/webpack/src/images/global/quote_41x.png" alt="quote"></span>
+            
+                <div class="quote-text">
+                  <p>{{ i18n "customer2Says" }}</p>
+                </div>
+            
+              <cite> - {{ i18n "customer2Name" }}</cite>
+            
+          </blockquote>
+        </div>
+    </div>
+    <div class="gallery-element feature">
+
+        <div class="gallery-photo feature">
+        <blockquote class="quote">
+            <span class="quote-icon"><img src="/webpack/src/images/global/quote_41x.png" alt="quote"></span>
+            
+              <div class="quote-text">
+                  <p>{{ i18n "customer3Says" }}</p>
+                </div>         
+
+              <cite> - {{ i18n "customer3Name" }}</cite>
+            
+          </blockquote>
+        </div>
+    </div>
+</div>
+<div class="gallery-indicator" style="margin-top:15px">
+    <div class="indicator selected"></div>
+    <div class="indicator"></div>
+    <div class="indicator"></div>
+</div>
+
+<style>
+
+.quote-icon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.quote-icon img {
+    width: 20px;
+    height: 20px;
+}
+
+.quote {
+    text-align: center;
+}
+
+.quote p {
+    margin-bottom:25px;
+}
+
+</style>

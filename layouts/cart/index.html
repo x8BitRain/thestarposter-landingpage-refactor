@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="{{ .Lang }}">
+
+<head>{{ partial "head.html" . }}
+    <meta charset=utf-8>
+    <meta http-equiv=X-UA-Compatible content="IE=edge">
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    <link rel=icon href=/cart/favicon.ico>
+    {{ $cartEndpoint := "https://develop--heurekart.netlify.com" }}
+    {{ if .Site.IsServer }}
+    <link href={{ $cartEndpoint }}/assets/css/app.css rel=preload as=style>
+    <link href={{ $cartEndpoint }}/assets/js/app.js rel=preload as=script>
+    <link href={{ $cartEndpoint }}/assets/js/chunk-vendors.js rel=preload as=script>
+    <link href={{ $cartEndpoint }}/assets/css/app.css rel=stylesheet>
+    {{ else }}
+    <link href=/cart/assets/css/app.css rel=preload as=style>
+    <link href=/cart/assets/js/app.js rel=preload as=script>
+    <link href=/cart/assets/js/chunk-vendors.js rel=preload as=script>
+    <link href=/cart/assets/css/app.css rel=stylesheet>
+    {{ end }}
+    <style>
+        .button {
+            padding: 8px 10px !important;
+            text-align: center !important;
+            vertical-align: middle !important;
+            display: inline-block !important;
+            width: auto !important;
+            border: 1px solid transparent !important;
+            border-radius: 2px !important;
+            background-color: #fff !important;
+            color: #3d4246 !important;
+            border-color: #e8e9eb !important;
+            cursor: pointer;
+            text-transform: uppercase !important;
+            letter-spacing: 0.9px !important;
+            font-weight: 600 !important;
+        }
+
+        .button:disabled {
+            opacity: 0.4;
+        }
+
+        .primary {
+            color: #fff !important;
+            background-color: #2d5385 !important;
+        }
+
+        .button:hover {
+            background-color: #fff !important;
+            color: #000000 !important;
+        }
+
+        .primary.button:hover {
+            background-color: #2d5385 !important;
+            color: #fff !important;
+        }
+        #menu {
+            position: relative;
+        }
+        .topnote, nav {
+            z-index: auto;
+        }
+
+        #checkout-button {
+            width:100% !important;
+        }
+
+        .singlePage_container {
+            margin-bottom: 10px;
+        }
+
+        .singlePage_container .mobile-delivery-time p {
+            text-align:center;
+        }
+
+        .trustbox-container {
+            margin: 4em auto; 
+            max-width: 1040px;
+        }
+
+        @media (max-width: 768px) {
+            .trustbox-container {
+                display:none;
+            }
+        }
+    </style>
+</head>
+
+<body class="cart" lang="{{ .Lang }}">
+
+    <div id="menu">
+        <div class="topnote-container">
+            {{ partial "topnote/discount.html" . }}
+            <div class="topnote-tp-widget trustpilot-widget" data-locale="{{.Lang}}"
+            data-template-id="5419b732fbfb950b10de65e5" data-businessunit-id="5c77474daf0021000143bd13"
+            data-style-height="24px" data-style-width="100%" data-style-align="right" data-theme="light"
+            style="position: relative;"><iframe frameborder="0" scrolling="no"
+                title="Customer reviews powered by Trustpilot" loading="auto"
+                src="https://widget.trustpilot.com/trustboxes/5419b732fbfb950b10de65e5/index.html?templateId=5419b732fbfb950b10de65e5&amp;businessunitId=5c77474daf0021000143bd13#locale=de-DE&amp;styleHeight=24px&amp;styleWidth=100%25&amp;styleAlign=right&amp;theme=light"
+                style="position: relative; height: 24px; width: 100%; border-style: none; display: block; overflow: hidden;"></iframe>
+            </div>
+        </div>
+        {{ partial "header/mainMenu.html" . }}
+        {{ partial "header/sideMenu.html" . }}
+    </div>
+
+    {{ partial "popups/language-picker.html" . }}
+
+    <div class=pusher>
+        <noscript><strong>We're sorry but cart doesn't work properly without JavaScript enabled. Please enable it
+                tocontinue.</strong></noscript>
+        <div class="singlePage_container">
+            <div id=app></div>
+            <div class="trustbox-container">
+                <div class="trustpilot-widget" data-locale="{{ .Site.Params.trustbox.Locale }}" data-template-id="53aa8912dec7e10d38f59f36" data-businessunit-id="5c77474daf0021000143bd13" data-style-height="130px" data-style-width="100%" data-theme="light" data-tags="order-lang-{{ .Lang }}" data-stars="5">
+                    <a href="https://trustpilot.com/review/www.heurekaprints.com" target="_blank" rel="noopener">Trustpilot</a>
+                </div>
+            </div>
+        </div>
+
+        {{ partial "footer/footer.html" . }}
+    </div>
+    {{ if .Site.IsServer }}
+    <div style="border: 1px solid black; max-width: 40em; clear: both;">
+        <div>
+            <select id="product" name="Product">
+                <option value="starmap">Starmap</option>
+            </select>
+            <select id="print" name="Print">
+                <option value="poster">Poster</option>
+                <!--<option value="poster-framed">Poster (framed)</option>-->
+                <option value="forex">Forex</option>
+                <option value="digital">Digital</option>
+            </select>
+            <input id="customId" placeholder="ProductId (optional)"></input>
+            <button id="add">Add</button>
+            <script>
+                const sampleIds = {
+                    starmap: ["BkePd5qBU", "SkI_GPKH8"],
+                }
+                const addButton = document.querySelector('#add')
+                const productSelect = document.querySelector('#product')
+                const printSelect = document.querySelector('#print')
+                const customId = document.querySelector('#customId')
+                addButton.addEventListener('click', function () {
+                    const product = productSelect.options[productSelect.selectedIndex].value
+                    const print = printSelect.options[printSelect.selectedIndex].value
+                    const productId = customId.value || sampleIds[product][Math.floor(Math.random() * sampleIds[product].length)]
+                    const url = "?productType=" + product + "&productId=" + productId + "&printType=" + print
+                    window.location = url
+                })
+            </script>
+        </div>
+        <script src={{ $cartEndpoint }}/assets/js/chunk-vendors.js></script>
+        <script src={{ $cartEndpoint }}/assets/js/app.js></script>
+        {{ else }}
+        <script src=/cart/assets/js/chunk-vendors.js></script>
+        <script src=/cart/assets/js/app.js></script>
+        {{ end }}
+        <script>
+            getCurrencies();
+        </script>
+</body>
+
+</html>

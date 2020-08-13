@@ -1,0 +1,40 @@
+
+{{ if ne (getenv "PRODUCTION_REDIRECTS") "TRUE"}}
+/backend/*  https://backend.dev.heurekaprints.de/:splat  200
+/cart/assets/* https://develop--heurekart.netlify.com/assets/:splat 200
+
+/* /it/:splat 200! Language=it
+/* /es/:splat 200! Language=es
+/* /fr/:splat 200! Language=fr
+/* /en/:splat 200!
+
+{{ else }}
+/backend/*  https://backend.heurekaprints.de/:splat  200!
+/cart/assets/* https://heurekart.netlify.com/assets/:splat 200!
+https://thestarposter.com/lang_redr/ /en/lang_redr/ 200!
+
+/r/* /:splat 301
+
+{{ $defaultLang := .Lang }}
+{{ $pageURL := $.Site.Home.Permalink }}
+{{ range $.Site.Home.AllTranslations }}
+    {{ $translation := .Permalink }}    
+    {{ if ne .Language.Lang "de" }}
+        {{ if ne .Language.Lang $defaultLang }}
+            {{ $pageURL }} {{ $translation }}lang_redr 302 Language={{ .Language }}
+        {{ end }} 
+    {{ end }}
+{{ end }}
+{{ $pageURL := .Permalink }}
+
+https://thestarposter.it/* /it/:splat 200!
+https://thestarposter.com/* /en/:splat 200!
+https://thestarposter.fr/* /fr/:splat 200!
+https://thestarposter.es/* /es/:splat 200!
+
+https://cart.nachthimmel.shop/* https://cart.nachthimmel.de/:splat 302!
+https://cart.nachthimmel.de/cart/* /de/cart/:splat 200!
+https://cart.nachthimmel.de/ https://nachthimmel.de 302!
+
+/* /en/:splat 200!
+{{ end }}

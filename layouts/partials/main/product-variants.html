@@ -1,0 +1,86 @@
+<!-- Product variants -->
+{{ $image_print := resources.Get "images/main/photo_product_print.png" }}
+{{ $image_forex := resources.Get "images/main/photo_product_forex.png" }}
+{{ $image_pdf := resources.Get "images/main/photo_product_pdf.png" }}
+{{ $image := resources.Get "images/main/photo_product_print.png" }}
+
+<section>
+    <div class="padding switch-bg">
+        <h2 class="no-separator">
+            {{ i18n "chooseYourProductHeadline" }}
+        </h2>
+        <div class="products">
+            <div class="dropdown">
+                <div class="dropdown-head" onclick="toggleDropdown(this)">
+                    <div class="dropdown-arrow arrow right"></div>
+                    <div class="dropdown-title">
+                        <h3>{{ i18n "posterHeadline" }} <span id="poster-price">49€</span></h3>
+                        <h4>{{ i18n "posterSubheadline" }}</h4>
+                    </div>
+                </div>
+                <div class="dropdown-extension">
+                    <div class="dropdown-extension-wrapper">
+                        <div class="dropdown-extension-content">
+                            {{ i18n "posterDetail" | markdownify }}
+                            <div class="product-title">
+                                <h3>{{ i18n "posterHeadline" }} <span id="poster-price">49€</span></h3>
+                                <h4>{{ i18n "posterSubheadline" }}</h4>
+                            </div>
+                            <div class="product-photo-container">
+                                <img class="product-photo lazyload" loading="lazy" data-src="{{ $image_print.RelPermalink }}"  alt="Poster" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <div class="dropdown-head" onclick="toggleDropdown(this)">
+                    <div class="dropdown-arrow arrow right"></div>
+                    <div class="dropdown-title">
+                        <h3>{{ i18n "forexHeadline" }} <span id="forex-price">99€</span></h3>
+                        <h4>{{ i18n "forexSubheadline" }}</h4>
+                    </div>
+                </div>
+                <div class="dropdown-extension">
+                    <div class="dropdown-extension-wrapper">
+                        <div class="dropdown-extension-content">
+                            {{ i18n "forexDetail" | markdownify }}
+                            <div class="product-title">
+                                <h3>{{ i18n "forexHeadline" }} <span id="forex-price">99€</span></h3>
+                                <h4>{{ i18n "forexSubheadline" }}</h4>
+                            </div>
+                            <div class="product-photo-container">
+                                <img class="product-photo lazyload" loading="lazy" data-src="{{ $image_forex.RelPermalink }}"  alt="Panel"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <div class="dropdown-head" onclick="toggleDropdown(this)">
+                    <div class="dropdown-arrow arrow right"></div>
+                    <div class="dropdown-title">
+                        <h3>{{ i18n "pdfHeadline" }} <span id="digital-price">29€</span></h3>
+                        <h4>{{ i18n "pdfSubheadline" }}</h4>
+                    </div>
+                </div>
+                <div class="dropdown-extension">
+                    <div class="dropdown-extension-wrapper">
+                        <div class="dropdown-extension-content">
+                            {{ i18n "pdfDetail" | markdownify }}
+                            <div class="product-title">
+                                <h3>{{ i18n "pdfHeadline" }} <span id="digital-price"></span></h3>
+                                <h4>{{ i18n "pdfSubheadline" }}</h4>
+                            </div>
+                            <div class="product-photo-container">
+                                <img class="product-photo lazyload" loading="lazy" data-src="{{ $image_pdf.RelPermalink }}"  alt="PDF"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

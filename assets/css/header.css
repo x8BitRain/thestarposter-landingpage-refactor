@@ -1,0 +1,278 @@
+/*---------------------------------------------------------------------------------------------------------------*/
+/* Topnote                                                                                                       */
+/*---------------------------------------------------------------------------------------------------------------*/
+
+.topnote {
+    z-index: 2;
+    width: 100vw;
+    padding: 10px;
+    box-sizing: border-box;
+    background: #ffffff;
+    position: relative;
+}
+
+.topnote-message {
+    font-weight: 600;
+    font-size: 0.9375em;
+    color: #788188;
+    text-align: center;
+}
+
+.topnote-disclaimer {
+    display: none;
+}
+
+.topnote-tp-widget {
+    display: none;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+    .topnote-container > .trustpilot-widget {
+        display:none;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .topnote-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .topnote {
+        width: auto;
+        padding: var(--dimension-spacing-half) var(--dimension-spacing-full);
+        padding-bottom: 0;
+    }
+
+    .topnote-message {
+        width: auto;
+        text-align: left;
+        margin: 0;
+    }
+
+    .topnote-tp-widget {
+        display: block;
+        padding: var(--dimension-spacing-half);
+        padding-right: var(--dimension-spacing-full);
+        padding-bottom: 0;
+    }
+}
+
+/*---------------------------------------------------------------------------------------------------------------*/
+/* Navigation                                                                                                    */
+/*---------------------------------------------------------------------------------------------------------------*/
+
+nav {
+    z-index: 2;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    padding: var(--dimension-spacing-half);
+    box-sizing: border-box;
+    background: #ffffff;
+}
+
+.logo-container {
+    height: 45px;
+}
+
+.logo {
+    max-width: 200px;
+}
+
+#compact-logo {
+    display:none;
+}
+
+nav > .actions {
+    height: 22px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-btn {
+    height: 22px;
+    width: 20px;
+    margin-left: var(--dimension-spacing-half);
+}
+
+#cart-link {
+    height:24px;
+}
+
+.cartCount {
+    width: 16px;
+    height: 16px;
+    display: block;
+    position: relative;
+    font-weight: 700;
+    background-color: #2d5385;
+    color: #fff;
+    border-radius: 9px;
+    min-width: 16px;
+    left: 28px;
+    top: -28px;
+}
+
+.cartCount span {
+    display: block;
+    padding: 2px 5px;
+    font-size: 11px;
+    line-height: 1;
+}
+
+.links {
+    display: none;
+}
+
+.links a:not(:last-of-type) {
+    margin-right: var(--dimension-spacing-full);
+}
+
+.menu-btn.language {
+    width: 26px;
+    cursor: pointer;
+}
+
+/* Hamburger animation */
+
+:root {
+    --hamburger-size: 22px;
+}
+
+.ic-hamburger {
+    width: var(--hamburger-size);
+    height: var(--hamburger-size);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.ic-hamburger .bar {
+    width: 100%;
+    height: calc(var(--hamburger-size) / 10);
+    border-radius: calc(var(--hamburger-size) / 10 / 2);
+    background: #000000;
+    transition: .2s ease-in-out;
+}
+
+.ic-hamburger .bar:not(:last-of-type) {
+    margin-bottom: calc(var(--hamburger-size) / 5);
+}
+
+.ic-hamburger.active .bar:not(:last-of-type) {
+    margin-bottom: calc(0px - var(--hamburger-size) / 10);
+}
+
+.ic-hamburger.active .bar.first {
+    transform: rotate(45deg)
+}
+
+.ic-hamburger.active .bar.mid {
+    opacity: 0;
+}
+
+.ic-hamburger.active .bar.last {
+    transform: rotate(-45deg)
+}
+
+@media screen and (min-width: 768px) {
+    nav {
+        padding: var(--dimension-spacing-half) var(--dimension-spacing-full);
+    }
+
+    nav>* {
+        flex: 1;
+    }
+
+    nav > .actions {
+        justify-content: flex-end;
+        margin-right: var(--dimension-spacing-quarter);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .links {
+        display: flex;
+        justify-content: center;
+    }
+
+    .hamburger {
+        display: none;
+    }
+}
+
+.currency {
+    width: min-content;
+    height: min-content;
+    background-color: white;
+    border: none;
+    transform: scale(1.1);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 2px;
+    border: 1px solid #dfdfdf;
+    padding: 5px 20px 5px 10px;
+    margin-left: 15px;
+    font-size: 1em;
+}
+
+@media only screen and (max-width: 750px) {
+    .currency {
+        margin-left: 15px;
+        background-color: #ffffffde;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .currency {
+        background-image: none;
+        padding:3px;
+        font-size: 0.9em;
+    }
+    #default-logo {
+        display: none;
+    }
+    #compact-logo {
+        display: block;
+        max-width: 150px;
+    }
+  }
+
+/*---------------------------------------------------------------------------------------------------------------*/
+/* Side Menu                                                                                                     */
+/*---------------------------------------------------------------------------------------------------------------*/
+
+#sideMenu {
+    z-index: 1;
+    width: 100vw;
+    background: #ffffff;
+    overflow-y: hidden;
+    transition: .2s ease;
+}
+
+#sideMenu.visible {
+    margin-top: 0;
+}
+
+.sideMenu-item {
+    display: block;
+    padding: 15px 30px;
+    border-bottom: 1px solid #e8e9eb;
+    text-align: left;
+}
+
+@media screen and (min-width: 768px) {
+    #sideMenu {
+        display: none;
+    }
+}

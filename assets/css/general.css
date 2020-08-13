@@ -1,0 +1,256 @@
+/*---------------------------------------------------------------------------------------------------------------*/
+/* Variables                                                                                                     */
+/*---------------------------------------------------------------------------------------------------------------*/
+
+:root {
+    --color-primary: #2d5385;
+    --color-primary-dark: #224574;
+    --color-secondary: #f0e1dd;
+    --color-secondary-light: #fcf9f8;
+    --dimension-spacing-full: 28px;
+    --dimension-spacing-half: calc(var(--dimension-spacing-full) / 2);
+    --dimension-spacing-quarter: calc(var(--dimension-spacing-half) / 2);
+    --dimension-border-radius: 2px;
+}
+
+/*---------------------------------------------------------------------------------------------------------------*/
+/* General                                                                                                       */
+/*---------------------------------------------------------------------------------------------------------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    -ms-overflow-style: none;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Work Sans", "HelveticaNeue", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+.preload * {
+    transition: none !important;
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
+}
+
+li {
+    list-style: none;
+    margin-left: 10px;
+}
+
+li::before {
+    content: "-";
+    position: absolute;
+    margin-left: -10px;
+}
+
+.gridtrust {
+  height: 107px;
+  padding:10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 1px 1px;
+  grid-template-areas: ". .";
+}
+
+/*---------------------------------------------------------------------------------------------------------------*/
+/* Text                                                                                                          */
+/*---------------------------------------------------------------------------------------------------------------*/
+
+p,
+a,
+h1,
+h2,
+h3 {
+    color: #3d4246;
+    text-align: center;
+}
+
+h1::after,
+h2::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 100px;
+    margin: var(--dimension-spacing-half) auto var(--dimension-spacing-half);
+    background: #3d4246;
+}
+
+h2.no-separator {
+    margin-bottom: var(--dimension-spacing-full);
+}
+
+.no-separator::after {
+    height: 0;
+    margin: 0;
+    background: none;
+}
+
+h2.small-margin {
+    margin-bottom: var(--dimension-spacing-quarter)
+}
+
+p.subhead {
+    margin-bottom: var(--dimension-spacing-half);
+}
+
+
+h1 {
+    font-size: 1.8125rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    font-size: .9375rem;
+}
+
+.label {
+    font-size: 14px;
+    padding: var(--dimension-spacing-quarter);
+}
+
+picture {
+    display: block;
+}
+
+@media screen and (min-width: 768px) {
+    p {
+        width: 75%;
+        margin: 0 auto;
+        font-size: 20px;
+    }
+
+    p.subhead {
+        margin-bottom: var(--dimension-spacing-full);
+    }
+
+    h3 {
+        font-size: 1.25rem;
+        margin-bottom: 4px;
+    }
+}
+
+/*---------------------------------------------------------------------------------------------------------------*/
+/* Components                                                                                                    */
+/*---------------------------------------------------------------------------------------------------------------*/
+
+.padding {
+    padding: var(--dimension-spacing-full);
+}
+
+.hero {
+    background: var(--color-secondary);
+}
+
+.bglight {
+    background: var(--color-secondary-light);
+}
+
+*>p:not(:first-of-type) {
+    margin-top: 1.5em;
+}
+
+
+div.text p:not(:first-of-type) {
+    margin-top: 14px;
+}
+
+.btn-container {
+    text-align: center;
+}
+
+.btnCreate {
+    display: inline-block;
+    margin-top: var(--dimension-spacing-half);
+    border-radius: var(--dimension-border-radius);
+    padding: 10px 16px;
+    box-sizing: border-box;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    text-transform: uppercase;
+    background: var(--color-primary);
+    color: #fff;
+}
+
+.btnCreate:hover {
+    opacity: .6;
+}
+
+.createPopup {
+    width: 100%;
+    position: fixed;
+    bottom: -123px;
+    padding: 22px;
+    box-sizing: border-box;
+    background: #ffffff;
+    box-shadow: none;
+    transition: 0.3s ease;
+}
+
+.createPopup.visible {
+    bottom: 0;
+    box-shadow: 0 0 10px 0 #0002;
+}
+
+.createPopup .btnCreate {
+    margin-top: 0px;
+    margin-bottom: var(--dimension-spacing-quarter);
+}
+
+.createPopup p {
+    font-size:0.7rem;
+    color: var(--color-primary)
+}
+
+.createPopup h3 {
+    margin-bottom: 4px;
+    font-size: 1rem;
+    color: var(--color-primary)
+}
+
+.disable-scroll {
+    overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+    #occasions .btn-container,
+    #productcontext .btn-container {
+        display:none
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .switch-bg {
+        background: var(--color-secondary-light);
+    }
+
+    .createPopup {
+        display: none;
+    }
+
+    #productcontext .btn-container {
+        margin-top: 1em;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1159px) {
+    .padding {
+        padding: calc(2 * var(--dimension-spacing-full)) 5vw;
+    }
+}
+
+@media screen and (min-width: 1160px) {
+    .padding {
+        padding: calc(2 * var(--dimension-spacing-full)) 10vw;
+    }
+}

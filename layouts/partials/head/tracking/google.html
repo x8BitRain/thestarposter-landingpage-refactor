@@ -1,0 +1,38 @@
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ index (.Site.Params.Tracking.Google) 0 }}"></script>
+<script>
+    var trackingSettings = {
+        'anonymize_ip': true,
+        'dimension1': '{{ getenv "BRANCH" }}',
+        'custom_map': { 'dimension1': 'branch' },
+        'optimize_id': 'GTM-KKWMS5V',
+        'linker': {
+            accept_incoming: true,
+            domains: [
+                'editor.nachthimmel.shop',
+                'nachthimmel.shop',
+                'cart.nachthimmel.shop',
+                'editor.nachthimmel.de',
+                'nachthimmel.de',
+                'cart.nachthimmel.de',
+                'editor.thestarposter.com',
+                'thestarposter.com',
+                'editor.thestarposter.it',
+                'thestarposter.it',
+                'editor.thestarposter.es',
+                'thestarposter.es',
+                'editor.thestarposter.fr',
+                'thestarposter.fr',
+                'your-star-map.myshopify.com',
+                'secure.heurekaprints.com'
+            ],
+            decorate_forms: true
+        }
+    }
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    {{ range .Site.Params.Tracking.Google }}
+        gtag('config', '{{ . }}', trackingSettings);
+    {{ end }}
+    gtag('event', 'branch', { 'branch': '{{ getenv "BRANCH" }}' });
+</script>

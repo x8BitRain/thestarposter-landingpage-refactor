@@ -1,0 +1,30 @@
+<html lang="{{ .Lang }}">
+
+<head>
+    {{ partial "head.html" . }}
+    <style>
+        .pusher {
+            min-height: calc(100vh - 32px) !important;
+        }
+        .singlePage_container {
+            margin: 30px auto;
+            max-width: 65em;
+        }
+    </style>
+</head>
+
+<body>
+    {{ partial "topnote/discount.html" . }}
+    {{ partial "header/sideMenu.html" . }}
+    <div class="pusher">
+        {{ partial "header/mainMenu.html" . }}
+        <div class="ui container">
+            <div class="singlePage_container">
+                {{ .Content }}
+            </div>
+        </div>
+        {{ partial "footer/footer.html" . }}
+    </div>
+</body>
+
+</html>

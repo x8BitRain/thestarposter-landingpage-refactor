@@ -1,0 +1,187 @@
+headlinePrimary:
+  other: Créez un Star Poster personnalisé
+
+headlineSecondary:
+  other:  Immortalisez un moment dans le temps avec une carte du ciel personnalisée.
+
+primaryBoxHeader:
+  other: Voyez leur visage s'illuminer
+
+primaryBoxText:
+  other: |
+    La recherche du cadeau idéal peut s’avérer être un processus long et coûteux amenant également son lot de stress. Pourquoi ne pas rendre cette expérience plus agréable?
+
+    Pourquoi ne pas offrir un cadeau démontrant réellement à quel point une personne compte pour vous? Un cadeau qui sera chéri et adoré pour toujours?
+
+    Le Star Poster est original et abordable, mais surtout, incroyablement attentionné. Quelle que soit l’occasion, ce cadeau éternel saura plaire!
+
+customer1Says:
+  other: Incroyable ! C'est tellement plus beau que je ne l'imaginais. Je le recommande vivement ❤️
+
+customer1Name:
+  other: Selina sur Trustpilot
+
+customer2Says:
+  other: Magnifique ! Grande qualité et livraison très rapide.
+
+customer2Name:
+  other: Ava sur Trustpilot
+
+customer3Says:
+  other: Beau produit et un service client vraiment attentionné.
+
+customer3Name:
+  other: Leni sur Trustpilot
+
+premiumQuality:
+  other: Un produit pour vous rendre heureux
+
+posterHeadline:
+  other: Poster qualité supérieure -
+
+posterSubheadline:
+  other: "50 x 70 cm"
+posterDetail:
+  other: |
+    <ul>
+    <li>- Papier photo Premium</li>
+    <li>- Résistant aux rayons UV</li>
+    <li>- Encadrement disponible</li>
+    </ul>
+
+forexHeadline:
+  other: Panel Print Premium -
+
+forexSubheadline:
+  other: 50 x 70 cm
+
+forexDetail:
+  other: |
+    <ul>
+    <li>- Panel Print de qualité Galerie</li>
+    <li>- 5 mm d’épaisseur</li>
+    <li>- Rehaussé d’une pellicule matte</li>
+    </ul>
+
+pdfHeadline:
+  other: Fichier numérique -
+
+pdfSubheadline:
+  other: À imprimer soi-même
+
+pdfDetail:
+  other: |
+    <ul>
+    <li>- Fichier d’impression haute résolution</li>
+    <li>- PDF 50 x 70 cm</li>
+    <li>- PNG 3 768 x 5 276 pixels</li>
+    </ul>
+instagramHeading:
+  other: "@thestarposter"
+
+instagramSubheading:
+  other: Nos clients sur Instagram
+
+howWeDoItHeadline:
+  other: Qualité parfaite
+
+madeIn:
+  other: Fabriqué en
+
+germany:
+  other: Allemagne
+
+germanyFrance:
+  other: France et Allemagne
+
+germanyItaly:
+  other: Italie et Allemagne
+
+howWeDoItText:
+  other: |
+    <h4>Livraison rapide et sans contact</h4>
+    Les posters sont expédiées en un jour ouvrable alors que les encadrements et panel print le sont en 2 jours ouvrables. Nous livrons à l’adresse de votre choix, que ce soit la vôtre ou celle de l’être cher.
+    <br/>
+    <br/>
+    <h4>Un plaisir à déballer</h4>
+    Offrez un poster dans un emballage de qualité supérieure. Nos colis sont préparés avec amour et sont un plaisir à déballer.
+
+astronomicallyValid:
+  other: Exactitude astronomique
+
+astronomicallyValidText:
+  other: Chaque carte stellaire est jumelée automatiquement avec un atlas du ciel.
+
+featuredIn:
+  other: En vedette dans
+
+presentOppurtunityForYou:
+  other: … ou simplement pour vous
+
+discountDisclaimer:
+  other: L’article le moins cher est automatiquement déduit du prix total au moment de passer à la caisse. Ne peut être combiné à d’autres rabais.
+
+endHeadline:
+  other: Voyez leur visage s’illuminer
+
+endText:
+  other: |
+    <p>Créez votre carte du ciel dès maintenant.</p>
+    <p id="lastline">Facile et rapide en seulement 3 étapes.</p>
+
+meta:
+  other: Créez une carte stellaire personnalisée avec le ciel étoilé de votre moment spécial.
+
+contactlessDelivery:
+  other: Livraison rapide et sans contact.
+
+byHeureka:
+  other: Fabriqué avec fierté par <a href="https://heurekaprints.com">Heureka Prints</a>
+
+createPopupTitle:
+  other: Livraison rapide et sans contact
+
+createPopupSub:
+  other: Fabriqué en France et Allemagne
+
+languagePickerTitle:
+  other: Choisissez votre langue
+
+astronomicallyValid:
+  other: Exactitude astronomique
+
+astronomicallyValidText:
+  other: Chaque carte du ciel est automatiquement jumelée avec le Hipparcos Millenium Star Atlas.
+
+featuredIn:
+  other: En vedette dans
+
+discountDisclaimer:
+  other: L’article le moins cher est automatiquement déduit du prix total au moment de passer à la caisse. Ne peut être combiné à d’autres rabais.
+
+alwaysPerfectPresent:
+  other: Le cadeau parfait pour toutes les occasions !
+
+byHeureka:
+  other: Fabriqué avec fierté par <a href="https://heurekaprints.com">Heureka Prints</a>
+
+createNow:
+  other: Créer maintenant
+presentOpportunity1Headline:
+  other: Cadeau de mariage
+presentOpportunity2Headline:
+  other: Cadeau d'anniversaire
+presentOpportunity4Headline:
+  other: Cadeau de naissance
+presentOpportunity4Text:
+  other: "Célébrez la naissance d'un enfant avec un cadeau unique : une carte du ciel personnalisée"
+howToCreateYourMap:
+  other: Comment créer votre carte du ciel
+choosePlaceAndDate:
+  other: 1. Choisissez le lieu et la date
+addYourDedication:
+  other: 2. Ajoutez une dédicace personnelle
+chooseYourLayout:
+  other: 3. Choisissez votre modèle
+chooseYourProductHeadline:
+  other: Choisissez votre carte du ciel

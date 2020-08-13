@@ -1,0 +1,19 @@
+<html>
+
+<head>
+    {{ partial "head.html" . }}
+</head>
+
+<body>
+    {{ partial "header/sideBarMenu.html" . }}
+    <div class="pusher">
+        {{ partial "header/mainMenu.html" . }}
+        <div class="ui container">
+            <h1>{{ .Title }}</h1>
+            {{ .Content }}
+        </div>
+        {{ partial "footer/footer.html" . }}
+    </div>>
+</body>
+
+</html>

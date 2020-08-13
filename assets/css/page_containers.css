@@ -1,0 +1,60 @@
+.singlePage_container {
+	margin: 50px 0 120px;
+}
+
+.singlePage_container a {
+	color: #0064bd;
+	text-decoration: underline;
+	overflow-wrap: break-word;
+}
+
+.singlePage_container a:hover {
+	color: #005b9d;
+	text-decoration: underline;
+
+}
+
+.singlePage_container ul, ol {
+	margin-left:30%;
+	margin-right:30%;
+}
+
+.singlePage_container p {
+	text-align:left;
+	margin-bottom:30px;
+	overflow-wrap: break-word;
+}
+
+.singlePage_container h3 {
+	margin-bottom: 30px;
+}
+
+.singlePage_container table {
+	margin:0 auto;
+}
+
+.singlePage_container table > thead tr th:not(:last-child), table > tbody tr td:not(:last-child) {
+	border-right: 1px solid #dcdcdc;
+}
+
+.singlePage_container table > tbody tr td {
+	border-top: 1px solid #dcdcdc;
+}
+
+.singlePage_container table > tbody td, th {
+	padding: 8px 12px;
+}
+
+@media screen and (max-width: 768px) {
+	.singlePage_container {
+		margin: 30px !important;
+	}
+   	.singlePage_container table > tbody td, th {
+		padding: 0px !important;
+	}
+}
+
+#trustDetails ul {
+	margin-left: 20px!important;
+	margin-right: 0px !important;
+}

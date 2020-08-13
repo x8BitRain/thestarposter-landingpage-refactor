@@ -1,0 +1,14 @@
+@media only print {
+    .Poster {
+        height: 100vh !important;
+        width: 100vw !important;
+        margin: 0px !important;
+    }
+    .posterContainer {
+        max-width: unset !important;
+        max-height: unset !important;
+    }
+    #cart-link {
+        display: none !important;
+    }
+}

@@ -1,0 +1,25 @@
+<script defer src="/vendor/cookieconsent.min.js"></script>
+<link rel="preload" href="/vendor/cookieconsent.min.css" as="style" onload="this.rel = 'stylesheet'"> 
+<script>
+  window.addEventListener("load", function () {
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#edeff5",
+          "text": "#838391"
+        },
+        "button": {
+          "background": "#4b81e8"
+        }
+      },
+      "theme": "classic",
+      "position": "bottom-left",
+      "content": {
+        "message": '{{ i18n "privacyDescription" }}',
+        "dismiss": '{{ i18n "privacyDismiss" }}',
+        "link": '{{ i18n "privacyLearnMore" }}',
+        "href": "/data-protection-declaration/"
+      }
+    })
+  });
+</script>
